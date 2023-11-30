@@ -23,7 +23,6 @@ export const newPost = async (
     const [rows, fields] = await connection.query(
         `INSERT INTO post (title, content) VALUES ("${title}", "${content}")`
     )
-    console.log('🚀 ~ file: post.ts:27 ~ rows:', rows)
     return rows
 }
 
