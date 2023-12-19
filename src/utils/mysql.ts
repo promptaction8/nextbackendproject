@@ -2,6 +2,6 @@ import mysql from 'mysql2/promise'
 
 export const createConnection = async () => {
     return await mysql.createConnection(
-        'mysql://ikowvk7hhy03qili9b1e:pscale_pw_2gt7alBlKmicHJ5T9rJ33c3wNDlrsNZFC710rXJEUbu@gcp.connect.psdb.cloud/databasestudy?ssl={"rejectUnauthorized":true}'
+        'mysql://fm1lg707d7cvf9fjpn2i:pscale_pw_FyeCMNrRFsA9Fvz8YLDoFmv43r9cm5LNzAbPw1eEj8W@gcp.connect.psdb.cloud/backendproject_1?ssl={"rejectUnauthorized":true}'
     )
 }

@@ -1,25 +1,23 @@
-import {
-    getPostController,
-    getPostsController,
-    newPostController,
-} from '@/controllers/getPosts'
+import { createPostController } from '@/controllers/posts/createPost'
+import { readPostsController } from '@/controllers/posts/readPosts'
 import { createConnection } from '@/utils/mysql'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
+// API HANDLER
 export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse<any>
 ) {
-    // database connection 생성
+    // 데이터베이스 연결 생성
     const connection = await createConnection()
-    // METHOD 분기
-    if (req.method === 'GET') {
-        // controller 호출
 
-        await getPostController(req, res, connection)
+    // 메서드 분기
+    if (req.method === 'GET') {
+        await readPostsController(req, res, connection)
     } else if (req.method === 'POST') {
-        await newPostController(req, res, connection)
+        await createPostController(req, res, connection)
     } else {
+        // 지원하지 않는 메서드에 대한 에러 응답
         res.status(400).json({
             error: {
                 message: '해당 메서드는 지원하지 않습니다.',
