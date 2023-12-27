@@ -20,5 +20,5 @@ export const createPostService = async (
     if (result.affectedRows !== 1) {
         return res.status(400).json({ error: { message: '안됨.' } })
     }
-    res.status(200).json({ status: 'success' })
+    res.status(201).json({ status: 'success' })
 }

@@ -19,10 +19,12 @@ export const deletePostService = async (
         return res.status(500).json({ message: '패스워드가 일치하지 않습니다' })
     }
     // 쿼리에서 받은 idx와 db의 post 값이 일치하지 않거나(타입이 같아야함) post가 없으면 에러처리.
-    if (idx === post[0]?.idx || post.length === 0) {
+    if (post.length === 0) {
         return res.status(500).json({ error: ' 삭제할 게시물이 없습니다.' })
     }
     await deletePost(idx, connection)
 
     res.status(200).json({ message: '해당 게시글이 삭제되었습니다' })
 }
+
+// cascade 병행

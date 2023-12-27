@@ -7,7 +7,8 @@ export const updatePostService = async (
     res: NextApiResponse<any>,
     connection: Connection
 ) => {
-    const { idx, title, content, password, author } = req.body
+    const { idx } = req.query
+    const { title, content, password, author } = req.body
     const post: any = await getPost(idx, connection)
     if (password !== post[0].password) {
         return res.status(500).json({ message: '패스워드가 일치하지 않습니다' })

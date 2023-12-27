@@ -26,5 +26,5 @@ export const newCommentsService = async (
     if (result.affectedRows !== 1) {
         return res.status(400).json({ error: { message: 'ERROR' } })
     }
-    res.status(200).json({ status: '댓글이 성공적으로 생성되었습니다' })
+    res.status(201).json({ status: '댓글이 성공적으로 생성되었습니다' })
 }
