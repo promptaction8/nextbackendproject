@@ -1,11 +1,11 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { Connection } from 'mysql2/promise'
-import { deletePostService } from '@/services/deletePost'
+import { loginService } from '@/services/login'
 
-export const deletePostController = async (
+export const loginController = async (
     req: NextApiRequest,
     res: NextApiResponse<any>,
     connection: Connection
 ) => {
-    await deletePostService(req, res, connection)
+    await loginService(req, res, connection)
 }
