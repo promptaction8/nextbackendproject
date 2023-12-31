@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { Connection } from 'mysql2/promise'
-import { readPostService } from '@/services/posts/readPost'
+import { readPostService } from '@/services/readPost'
 
 export const readPostController = async (
     req: NextApiRequest,
